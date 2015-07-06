@@ -1,0 +1,101 @@
+@import 'mixin';
+@import 'base';
+
+.block-gallery {
+  position: relative;
+  .slider-pagination {
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    font-size: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      box-sizing: border-box;
+      border: 2px solid #ffffff;
+      margin: 0 4px;
+      cursor: pointer;
+      &.active {
+        background-color: #ffffff;
+      }
+    }
+  }
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+    position: relative;
+    -ms-scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+    .slide, .shaper {
+      width: 100%;
+      max-width: 1900px;
+      overflow: hidden;
+      display: inline-block;
+      img {
+        display: block;
+        width: 100%;
+        max-width: 1900px;
+        margin: auto;
+      }
+    }
+    .slide {
+      position: absolute;
+      .text {
+        position: absolute;
+        width: 550px;
+        top: 70px;
+        left: 50%;
+        margin-left: -490px;
+        color: #ffffff;
+        white-space: normal;
+        h3 {
+          font: {
+            family: "Fira Sans", sans-serif;
+            size: 54px;
+            weight: 300;
+          }
+          margin-bottom: 14px;
+        }
+        p {
+          font: {
+            size: 16px;
+            family: Tahoma, sans-serif;
+            weight: 300;
+          }
+          margin-bottom: 6px;
+        }
+      }
+    }
+    .arrow-left, .arrow-right {
+      position: absolute;
+      top: 50%;
+      height: 113px;
+      margin-top: -56px;
+      width: 113px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1000;
+      @include transition(0.3s all ease-in-out);
+    }
+    .arrow-left {
+      left: -113px;
+    }
+    .arrow-right {
+      right: -113px;
+    }
+    &:hover {
+      .arrow-left {
+        left: 0;
+      }
+      .arrow-right {
+        right: 0;
+      }
+    }
+  }
+}

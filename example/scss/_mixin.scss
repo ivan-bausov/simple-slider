@@ -1,0 +1,73 @@
+@mixin vendor($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin animation($animation){
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+@mixin transition($transition){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin text-shadow($shadow){
+  -webkit-text-shadow: $shadow;
+  -moz-text-shadow: $shadow;
+  -o-text-shadow: $shadow;
+  -ms-text-shadow: $shadow;
+  text-shadow: $shadow;
+}
+
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@mixin placeholder{
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  :-moz-placeholder {
+    @content;
+  }
+
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+}
